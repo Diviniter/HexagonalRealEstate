@@ -18,3 +18,10 @@ C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRea
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRealEstate.Domain\bin\Debug\Optional.xml
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.dll
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.pdb
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\HexagonalRealEstate.Domain.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\HexagonalRealEstate.Domain.pdb
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\Optional.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\Optional.xml
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.csprojResolveAssemblyReference.cache
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.pdb

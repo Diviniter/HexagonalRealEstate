@@ -31,3 +31,14 @@ C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRea
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.dll
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalCat\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Domain.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Domain.pdb
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.pdb
