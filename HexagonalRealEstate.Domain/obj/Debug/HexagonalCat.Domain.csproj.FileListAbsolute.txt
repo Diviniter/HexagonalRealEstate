@@ -1,0 +1,7 @@
+C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat.Domain\obj\Debug\HexagonalCat.Domain.dll
+C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat.Domain\obj\Debug\HexagonalCat.Domain.pdb
+C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat.Domain\bin\Debug\HexagonalCat.Domain.dll
+C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat.Domain\bin\Debug\HexagonalCat.Domain.pdb
+C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat.Domain\bin\Debug\Optional.dll
+C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat.Domain\bin\Debug\Optional.xml
+C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat.Domain\obj\Debug\HexagonalCat.Domain.csprojResolveAssemblyReference.cache

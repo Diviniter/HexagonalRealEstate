@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04FAFBD7-4AE9-4171-9258-580440AA6EEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HexagonalRealEstate.Domain</RootNamespace>
+    <AssemblyName>HexagonalRealEstate.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Optional, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Optional.3.2.0\lib\net461\Optional.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccomodationDomain\Accomodation.cs" />
+    <Compile Include="AccomodationDomain\AccomodationAlreadyExistException.cs" />
+    <Compile Include="AccomodationDomain\AccomodationRepository.cs" />
+    <Compile Include="AccomodationDomain\AccomodationService.cs" />
+    <Compile Include="AccomodationDomain\AccomodationServiceImpl.cs" />
+    <Compile Include="ClientDomain\Client.cs" />
+    <Compile Include="ClientDomain\ClientService.cs" />
+    <Compile Include="AccomodationDomain\AccomodationAlreadySold.cs" />
+    <Compile Include="PersonDomain\PersonArleadyExistException.cs" />
+    <Compile Include="PersonDomain\PersonService.cs" />
+    <Compile Include="PersonDomain\PersonServiceImpl.cs" />
+    <Compile Include="ProspectDomain\AlreadyProspectOnAccomodationException.cs" />
+    <Compile Include="General\ObjectDoesNotExistInRepositoryException.cs" />
+    <Compile Include="ClientDomain\ClientServiceImpl.cs" />
+    <Compile Include="ProspectDomain\ProspectNotificationService.cs" />
+    <Compile Include="ProspectDomain\ProspectService.cs" />
+    <Compile Include="PersonDomain\PersonRepository.cs" />
+    <Compile Include="PersonDomain\Person.cs" />
+    <Compile Include="ProspectDomain\Prospect.cs" />
+    <Compile Include="ProspectDomain\ProspectServiceImpl.cs" />
+    <Compile Include="General\Repository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
