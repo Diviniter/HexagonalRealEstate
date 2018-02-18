@@ -42,3 +42,15 @@ C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\Hexag
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.dll
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Domain.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\CSharpFunctionalExtensions.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Domain.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.pdb

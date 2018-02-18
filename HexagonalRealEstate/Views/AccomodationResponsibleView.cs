@@ -1,8 +1,8 @@
-﻿using HexagonalRealEstate.Infrastructure.View;
+﻿using System;
+using System.Collections.Generic;
+using HexagonalRealEstate.Infrastructure.View.Controllers;
 using HexagonalRealEstate.Infrastructure.View.Helpers;
 using HexagonalRealEstate.Infrastructure.View.Models;
-using System;
-using System.Collections.Generic;
 using Unity;
 
 namespace HexagonalRealEstate.Views
@@ -23,12 +23,14 @@ namespace HexagonalRealEstate.Views
 
         public static void CreateAccomodation()
         {
-            var accomodation = new AccomodationModel
+            var accomodation = new CreateAccomodationModel
             {
                 Number = View.GetString("Number")
             };
 
-            _controller.CreateAccomodation(accomodation);
+            var message = _controller.CreateAccomodation(accomodation);
+
+            Console.WriteLine(message);
         }
     }
 }

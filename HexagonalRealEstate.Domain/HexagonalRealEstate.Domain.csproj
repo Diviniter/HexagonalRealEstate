@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Optional, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Optional.3.2.0\lib\net461\Optional.dll</HintPath>
+    <Reference Include="CSharpFunctionalExtensions, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharpFunctionalExtensions.1.8.1\lib\net461\CSharpFunctionalExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -46,34 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccomodationDomain\Accomodation.cs" />
-    <Compile Include="AccomodationDomain\AccomodationAlreadyExistException.cs" />
-    <Compile Include="AccomodationDomain\AccomodationRepository.cs" />
-    <Compile Include="AccomodationDomain\AccomodationService.cs" />
-    <Compile Include="AccomodationDomain\AccomodationServiceImpl.cs" />
-    <Compile Include="ClientDomain\Client.cs" />
-    <Compile Include="ClientDomain\ClientService.cs" />
-    <Compile Include="AccomodationDomain\AccomodationAlreadySold.cs" />
-    <Compile Include="PersonDomain\PersonArleadyExistException.cs" />
-    <Compile Include="PersonDomain\PersonService.cs" />
-    <Compile Include="PersonDomain\PersonServiceImpl.cs" />
-    <Compile Include="ProspectDomain\AlreadyProspectOnAccomodationException.cs" />
-    <Compile Include="General\ObjectDoesNotExistInRepositoryException.cs" />
-    <Compile Include="ClientDomain\ClientServiceImpl.cs" />
-    <Compile Include="ProspectDomain\ProspectNotificationService.cs" />
-    <Compile Include="ProspectDomain\ProspectService.cs" />
-    <Compile Include="PersonDomain\PersonRepository.cs" />
-    <Compile Include="PersonDomain\Person.cs" />
-    <Compile Include="ProspectDomain\Prospect.cs" />
-    <Compile Include="ProspectDomain\ProspectServiceImpl.cs" />
-    <Compile Include="General\Repository.cs" />
+    <Compile Include="AccomodationDomain\Exceptions\AccomodationDoesNotExistException.cs" />
+    <Compile Include="AccomodationDomain\Objects\Accomodation.cs" />
+    <Compile Include="AccomodationDomain\Exceptions\AccomodationAlreadyExistException.cs" />
+    <Compile Include="AccomodationDomain\Objects\Properties\AccomodationNumber.cs" />
+    <Compile Include="AccomodationDomain\Repositories\AccomodationQuery.cs" />
+    <Compile Include="AccomodationDomain\Repositories\AccomodationRepository.cs" />
+    <Compile Include="AccomodationDomain\Service\AccomodationService.cs" />
+    <Compile Include="AccomodationDomain\Service\AccomodationServiceImpl.cs" />
+    <Compile Include="AccomodationDomain\Objects\AccomodationId.cs" />
+    <Compile Include="ClientDomain\Objects\Client.cs" />
+    <Compile Include="ClientDomain\Services\ClientService.cs" />
+    <Compile Include="AccomodationDomain\Exceptions\AccomodationAlreadySoldException.cs" />
+    <Compile Include="General\StringValidator.cs" />
+    <Compile Include="PersonDomain\Exceptions\PersonDoesNotExistException.cs" />
+    <Compile Include="PersonDomain\Objects\PersonId.cs" />
+    <Compile Include="PersonDomain\Objects\Properties\PersonEmail.cs" />
+    <Compile Include="PersonDomain\Objects\Properties\PersonName.cs" />
+    <Compile Include="PersonDomain\Objects\Properties\PersonFirstName.cs" />
+    <Compile Include="PersonDomain\Repositories\PersonQuery.cs" />
+    <Compile Include="PersonDomain\Services\PersonService.cs" />
+    <Compile Include="PersonDomain\Services\PersonServiceImpl.cs" />
+    <Compile Include="ProspectDomain\Exceptions\AlreadyProspectOnAccomodationException.cs" />
+    <Compile Include="ClientDomain\Services\ClientServiceImpl.cs" />
+    <Compile Include="ProspectDomain\Services\ProspectNotificationService.cs" />
+    <Compile Include="ProspectDomain\Services\ProspectService.cs" />
+    <Compile Include="PersonDomain\Repositories\PersonRepository.cs" />
+    <Compile Include="PersonDomain\Objects\Person.cs" />
+    <Compile Include="ProspectDomain\Objects\Prospect.cs" />
+    <Compile Include="ProspectDomain\Services\ProspectServiceImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FodyWeavers.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,9 +1,14 @@
-﻿using HexagonalRealEstate.Domain.Accomodation;
-using HexagonalRealEstate.Domain.AccomodationDomain;
-using HexagonalRealEstate.Domain.ClientDomain;
-using HexagonalRealEstate.Domain.General;
-using HexagonalRealEstate.Domain.PersonDomain;
-using HexagonalRealEstate.Domain.ProspectDomain;
+﻿using CSharpFunctionalExtensions;
+using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
+using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
+using HexagonalRealEstate.Domain.ClientDomain.Services;
+using HexagonalRealEstate.Domain.PersonDomain.Exceptions;
+using HexagonalRealEstate.Domain.PersonDomain.Objects;
+using HexagonalRealEstate.Domain.PersonDomain.Objects.Properties;
+using HexagonalRealEstate.Domain.PersonDomain.Repositories;
+using HexagonalRealEstate.Domain.ProspectDomain.Services;
+using HexagonalRealEstate.Tests.Domain.AccomodationDomain;
 using NFluent;
 using NSubstitute;
 using Xunit;
@@ -18,32 +23,43 @@ namespace HexagonalRealEstate.Tests.Domain.ClientDomain
             public Person Person;
             public Accomodation Accomodation;
             public PersonRepository PersonRepository;
+            public PersonQuery PersonQuery;
             public AccomodationRepository AccomodationRepository;
+            public AccomodationQuery AccomodationQuery;
             public ProspectNotificationService ProspectNotificationService;
-
         }
 
         private ClientServiceImplHelper SellAccomodationDefaultConfiguration()
         {
-            var person = new Person("john", "smith", "email@email.fr");
-            var personRepository = Substitute.For<PersonRepository>();
-            personRepository.Exist(person).Returns(true);
+            var person = new Person(
+                Maybe<string>.None,
+                PersonFirstName.Create("john").Value,
+                PersonName.Create("smith").Value,
+                PersonEmail.Create("email@email.fr").Value);
+            var personQuery = Substitute.For<PersonQuery>();
+            personQuery.Exist(person).Returns(true);
 
-            var accomodation = new Accomodation("A100");
+            var personRepository = Substitute.For<PersonRepository>();
+
+            var accomodation = AccomodationTest.GetAccomodation();
             var accomodationRepository = Substitute.For<AccomodationRepository>();
-            accomodationRepository.Exist(accomodation).Returns(true);
-            personRepository.IsAccomodationSold(accomodation).Returns(false);
+            var accomodationQuery = Substitute.For<AccomodationQuery>();
+            accomodationQuery.Exist(accomodation).Returns(true);
+            personQuery.IsAccomodationSold(accomodation).Returns(false);
 
             var prospectNotificationService = Substitute.For<ProspectNotificationService>();
 
-            var clientService = new ClientServiceImpl(personRepository, accomodationRepository, prospectNotificationService);
+            var clientService = new ClientServiceImpl(personRepository, accomodationRepository,
+                prospectNotificationService, personQuery, accomodationQuery);
 
             return new ClientServiceImplHelper
             {
                 Person = person,
                 Accomodation = accomodation,
                 PersonRepository = personRepository,
+                PersonQuery = personQuery,
                 AccomodationRepository = accomodationRepository,
+                AccomodationQuery = accomodationQuery,
                 ProspectNotificationService = prospectNotificationService,
                 ClientServiceImpl = clientService
             };
@@ -74,14 +90,14 @@ namespace HexagonalRealEstate.Tests.Domain.ClientDomain
             var clientService = defaultConfiguration.ClientServiceImpl;
             var person = defaultConfiguration.Person;
             var accomodation = defaultConfiguration.Accomodation;
-            var personRepository = defaultConfiguration.PersonRepository;
+            var personQuery = defaultConfiguration.PersonQuery;
 
-            personRepository.Exist(person).Returns(false);
+            personQuery.Exist(person).Returns(false);
 
             //Action
             //Assert
             Check.ThatCode(() => { clientService.SellAccomodation(person, accomodation); })
-                .Throws<ObjectDoesNotExistInRepositoryException>();
+                .Throws<PersonDoesNotExistException>();
         }
 
         [Fact]
@@ -92,14 +108,14 @@ namespace HexagonalRealEstate.Tests.Domain.ClientDomain
             var clientService = defaultConfiguration.ClientServiceImpl;
             var person = defaultConfiguration.Person;
             var accomodation = defaultConfiguration.Accomodation;
-            var accomodationRepository = defaultConfiguration.AccomodationRepository;
+            var accomodationQuery = defaultConfiguration.AccomodationQuery;
 
-            accomodationRepository.Exist(accomodation).Returns(false);
+            accomodationQuery.Exist(accomodation).Returns(false);
 
             //Action
             //Assert
             Check.ThatCode(() => { clientService.SellAccomodation(person, accomodation); })
-                .Throws<ObjectDoesNotExistInRepositoryException>();
+                .Throws<AccomodationDoesNotExistException>();
         }
 
         [Fact]
@@ -110,14 +126,14 @@ namespace HexagonalRealEstate.Tests.Domain.ClientDomain
             var clientService = defaultConfiguration.ClientServiceImpl;
             var person = defaultConfiguration.Person;
             var accomodation = defaultConfiguration.Accomodation;
-            var personRepository = defaultConfiguration.PersonRepository;
+            var personQuery = defaultConfiguration.PersonQuery;
 
-            personRepository.IsAccomodationSold(accomodation).Returns(true);
+            personQuery.IsAccomodationSold(accomodation).Returns(true);
 
             //Action
             //Assert
             Check.ThatCode(() => { clientService.SellAccomodation(person, accomodation); })
-                .Throws<AccomodationAlreadySold>();
+                .Throws<AccomodationAlreadySoldException>();
         }
 
         [Fact]

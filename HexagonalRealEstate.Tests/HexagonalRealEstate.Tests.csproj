@@ -43,6 +43,10 @@
       <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CSharpFunctionalExtensions, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharpFunctionalExtensions.1.8.1\lib\net461\CSharpFunctionalExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NFluent, Version=2.1.1.107, Culture=neutral, PublicKeyToken=18828b37b84b1437, processorArchitecture=MSIL">
       <HintPath>..\packages\NFluent.2.1.1\lib\net45\NFluent.dll</HintPath>
@@ -88,8 +92,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Domain\AccomodationDomain\AccomodationNumberTest.cs" />
     <Compile Include="Domain\AccomodationDomain\AccomodationServiceImplTest.cs" />
     <Compile Include="Domain\AccomodationDomain\AccomodationTest.cs" />
+    <Compile Include="Domain\PersonDomain\PersonEmailTest.cs" />
     <Compile Include="Domain\PersonDomain\PersonServiceTest.cs" />
     <Compile Include="Domain\PersonDomain\PersonTest.cs" />
     <Compile Include="Domain\ClientDomain\ClientTest.cs" />

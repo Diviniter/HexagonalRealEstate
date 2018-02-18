@@ -105,3 +105,30 @@ C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\Hexag
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.RegistrationByConvention.pdb
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.ServiceLocation.pdb
 C:\Users\dhanoun\OneDrive - Bouygues Immobilier\Bureau\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.csprojResolveAssemblyReference.cache
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.exe.config
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.exe
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.csprojResolveAssemblyReference.cache
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.exe
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\CommonServiceLocator.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Domain.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Abstractions.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Configuration.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Container.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.Configuration.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.RegistrationByConvention.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.ServiceLocation.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\CSharpFunctionalExtensions.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Domain.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\CommonServiceLocator.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Abstractions.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Configuration.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Container.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.Configuration.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.RegistrationByConvention.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.ServiceLocation.pdb

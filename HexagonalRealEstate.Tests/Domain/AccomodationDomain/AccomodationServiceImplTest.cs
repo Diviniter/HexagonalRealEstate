@@ -1,5 +1,6 @@
-﻿using HexagonalRealEstate.Domain.Accomodation;
-using HexagonalRealEstate.Domain.AccomodationDomain;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
+using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
+using HexagonalRealEstate.Domain.AccomodationDomain.Service;
 using NFluent;
 using NSubstitute;
 using Xunit;
@@ -12,11 +13,12 @@ namespace HexagonalRealEstate.Tests.Domain.AccomodationDomain
         public void CreateAccomodationShouldCallRepository()
         {
             //Init
-            var accomodation = new Accomodation("A1");
+            var accomodation = AccomodationTest.GetAccomodation();
+            var accomodationQuery = Substitute.For<AccomodationQuery>();
             var accomodationRepository = Substitute.For<AccomodationRepository>();
-            var service = new AccomodationServiceImpl(accomodationRepository);
+            var service = new AccomodationServiceImpl(accomodationRepository, accomodationQuery);
 
-            accomodationRepository.Exist(accomodation).Returns(false);
+            accomodationQuery.Exist(accomodation).Returns(false);
 
             //Action
             service.CreateAccomodation(accomodation);
@@ -29,11 +31,12 @@ namespace HexagonalRealEstate.Tests.Domain.AccomodationDomain
         public void CreateAccomodationShouldThrowExceptionWhenAccomodationAlreadyExist()
         {
             //Init
-            var accomodation = new Accomodation("A1");
+            var accomodation = AccomodationTest.GetAccomodation();
+            var accomodationQuery = Substitute.For<AccomodationQuery>();
             var accomodationRepository = Substitute.For<AccomodationRepository>();
-            var service = new AccomodationServiceImpl(accomodationRepository);
+            var service = new AccomodationServiceImpl(accomodationRepository, accomodationQuery);
 
-            accomodationRepository.Exist(accomodation).Returns(true);
+            accomodationQuery.Exist(accomodation).Returns(true);
 
             //Action
             //Assert

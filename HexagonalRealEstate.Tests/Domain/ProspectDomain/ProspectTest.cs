@@ -1,28 +1,50 @@
-﻿using HexagonalRealEstate.Domain.AccomodationDomain;
-using HexagonalRealEstate.Domain.PersonDomain;
-using HexagonalRealEstate.Domain.ProspectDomain;
+﻿using System;
+using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+using HexagonalRealEstate.Domain.PersonDomain.Objects;
+using HexagonalRealEstate.Domain.ProspectDomain.Objects;
+using HexagonalRealEstate.Tests.Domain.AccomodationDomain;
+using HexagonalRealEstate.Tests.Domain.PersonDomain;
 using NFluent;
-using System;
 using Xunit;
 
 namespace HexagonalRealEstate.Tests.Domain.ProspectDomain
 {
     public class ProspectTest
     {
-        [Fact]
-        public void ProspectShouldBeEqualsToAPerson()
+        private static Prospect GetProspect()
         {
-            var prospect = new Prospect("Samantha", "De la licorne", "email@email.fr", new Accomodation("A201"));
+            return new Prospect(PersonTest.GetPerson(), AccomodationTest.GetAccomodation());
+        }
 
-            Check.That(prospect).Equals(new Person("Samantha", "De la licorne", "email@email.fr"));
+        [Fact]
+        public void PersonPropertyShouldBeTheSameAsConstructorParameter()
+        {
+            var prospect = GetProspect();
+
+            Check.That(prospect.Person).IsEqualTo(PersonTest.GetPerson());
+        }
+
+        [Fact]
+        public void AccomodationPropertyShouldBeTheSameAsConstructorParameter()
+        {
+            var prospect = GetProspect();
+
+            Check.That(prospect.Accomodation).IsEqualTo(AccomodationTest.GetAccomodation());
         }
 
         [Fact]
         public void ProspectShouldNotAcceptNullAccomodation()
         {
             Accomodation accomodation = null;
+            Check.ThatCode(() => { new Prospect(PersonTest.GetPerson(), accomodation); })
+                .Throws<ArgumentNullException>();
+        }
 
-            Check.ThatCode(() => { new Prospect("Samantha", "De la licorne", "email@email.fr", accomodation); })
+        [Fact]
+        public void ProspectShouldNotAcceptNullPerson()
+        {
+            Person person = null;
+            Check.ThatCode(() => { new Prospect(person, AccomodationTest.GetAccomodation()); })
                 .Throws<ArgumentNullException>();
         }
     }
