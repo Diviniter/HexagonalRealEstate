@@ -24,7 +24,6 @@ namespace HexagonalRealEstate.Tests.Domain.ClientDomain
             public Accomodation Accomodation;
             public PersonRepository PersonRepository;
             public PersonQuery PersonQuery;
-            public AccomodationRepository AccomodationRepository;
             public AccomodationQuery AccomodationQuery;
             public ProspectNotificationService ProspectNotificationService;
         }
@@ -42,14 +41,13 @@ namespace HexagonalRealEstate.Tests.Domain.ClientDomain
             var personRepository = Substitute.For<PersonRepository>();
 
             var accomodation = AccomodationTest.GetAccomodation();
-            var accomodationRepository = Substitute.For<AccomodationRepository>();
             var accomodationQuery = Substitute.For<AccomodationQuery>();
             accomodationQuery.Exist(accomodation).Returns(true);
             personQuery.IsAccomodationSold(accomodation).Returns(false);
 
             var prospectNotificationService = Substitute.For<ProspectNotificationService>();
 
-            var clientService = new ClientServiceImpl(personRepository, accomodationRepository,
+            var clientService = new ClientServiceImpl(personRepository,
                 prospectNotificationService, personQuery, accomodationQuery);
 
             return new ClientServiceImplHelper
@@ -58,7 +56,6 @@ namespace HexagonalRealEstate.Tests.Domain.ClientDomain
                 Accomodation = accomodation,
                 PersonRepository = personRepository,
                 PersonQuery = personQuery,
-                AccomodationRepository = accomodationRepository,
                 AccomodationQuery = accomodationQuery,
                 ProspectNotificationService = prospectNotificationService,
                 ClientServiceImpl = clientService

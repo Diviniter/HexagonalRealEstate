@@ -14,17 +14,13 @@ namespace HexagonalRealEstate.Domain.ClientDomain.Services
         private readonly PersonQuery personQuery;
         private readonly AccomodationQuery accomodationQuery;
         private readonly PersonRepository personRepository;
-        private readonly AccomodationRepository accomodationRepository;
         private readonly ProspectNotificationService prospectNotificationService;
 
-        public ClientServiceImpl(PersonRepository personRepository, AccomodationRepository accomodationRepository,
-            ProspectNotificationService prospectNotificationService, PersonQuery personQuery,
-            AccomodationQuery accomodationQuery)
+        public ClientServiceImpl(PersonRepository personRepository, ProspectNotificationService prospectNotificationService,
+            PersonQuery personQuery, AccomodationQuery accomodationQuery)
         {
             if (personRepository == null)
                 throw new ArgumentNullException(nameof(personRepository));
-            if (accomodationRepository == null)
-                throw new ArgumentNullException(nameof(accomodationRepository));
             if (prospectNotificationService == null)
                 throw new ArgumentNullException(nameof(prospectNotificationService));
             if (personQuery == null)
@@ -33,7 +29,6 @@ namespace HexagonalRealEstate.Domain.ClientDomain.Services
                 throw new ArgumentNullException(nameof(accomodationQuery));
 
             this.personRepository = personRepository;
-            this.accomodationRepository = accomodationRepository;
             this.prospectNotificationService = prospectNotificationService;
             this.personQuery = personQuery;
             this.accomodationQuery = accomodationQuery;

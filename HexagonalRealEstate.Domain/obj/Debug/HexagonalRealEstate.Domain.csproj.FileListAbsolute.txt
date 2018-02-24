@@ -30,4 +30,3 @@ C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\Hexago
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\CSharpFunctionalExtensions.dll
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.dll
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.pdb
-C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.csprojResolveAssemblyReference.cache
