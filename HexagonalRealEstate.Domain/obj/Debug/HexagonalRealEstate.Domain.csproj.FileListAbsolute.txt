@@ -32,3 +32,5 @@ C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\Hexago
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.pdb
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\MediatR.dll
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\obj\Debug\HexagonalRealEstate.Domain.csprojResolveAssemblyReference.cache
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\NullGuard.dll
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Domain\bin\Debug\NullGuard.xml

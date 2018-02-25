@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using HexagonalRealEstate.Domain.ClientDomain.Events;
@@ -17,11 +16,6 @@ namespace HexagonalRealEstate.Infrastructure.EventsHandlers
 
         public NotifyProspectsWhenAccomodationIsSoldDomainEventHandler(WriteStrategy writeStrategy, PersonQueryExtended personQuery)
         {
-            if (personQuery == null)
-                throw new ArgumentNullException(nameof(personQuery));
-            if (writeStrategy == null)
-                throw new ArgumentNullException(nameof(writeStrategy));
-
             this.personQuery = personQuery;
             this.writeStrategy = writeStrategy;
         }

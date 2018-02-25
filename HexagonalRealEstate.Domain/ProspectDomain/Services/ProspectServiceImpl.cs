@@ -1,5 +1,4 @@
-﻿using System;
-using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
 using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
 using HexagonalRealEstate.Domain.PersonDomain.Exceptions;
@@ -15,16 +14,10 @@ namespace HexagonalRealEstate.Domain.ProspectDomain.Services
         private readonly PersonQuery personQuery;
         private readonly AccomodationQuery accomodationQuery;
 
-        public ProspectServiceImpl(PersonRepository personRepository, PersonQuery personQuery,
+        public ProspectServiceImpl(PersonRepository personRepository,
+            PersonQuery personQuery,
             AccomodationQuery accomodationQuery)
         {
-            if (personRepository == null)
-                throw new ArgumentNullException(nameof(personRepository));
-            if (personQuery == null)
-                throw new ArgumentNullException(nameof(personQuery));
-            if (accomodationQuery == null)
-                throw new ArgumentNullException(nameof(accomodationQuery));
-
             this.personRepository = personRepository;
             this.personQuery = personQuery;
             this.accomodationQuery = accomodationQuery;
@@ -32,7 +25,6 @@ namespace HexagonalRealEstate.Domain.ProspectDomain.Services
 
         public void CreateProspect(PersonId person, AccomodationId accomodation)
         {
-            this.CheckThatParametersAreNotNull(person, accomodation);
             this.ThrowExceptionIfAccomodationDoesNotExistInRepository(accomodation);
             this.ThrowExceptionIfPersonDoesNotExistInRepository(person);
             this.ThrowExceptionWhenProscpectIsAlreadyLinkedToAccomodation(person, accomodation);
@@ -52,14 +44,6 @@ namespace HexagonalRealEstate.Domain.ProspectDomain.Services
             var personExist = this.personQuery.Exist(person);
             if (!personExist)
                 throw new PersonDoesNotExistException();
-        }
-
-        private void CheckThatParametersAreNotNull(PersonId person, AccomodationId accomodation)
-        {
-            if (person == null)
-                throw new ArgumentNullException(nameof(person));
-            if (accomodation == null)
-                throw new ArgumentNullException(nameof(accomodation));
         }
 
         private void ThrowExceptionIfAccomodationDoesNotExistInRepository(AccomodationId accomodation)

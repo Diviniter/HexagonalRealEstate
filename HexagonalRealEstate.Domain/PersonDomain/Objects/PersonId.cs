@@ -18,9 +18,6 @@ namespace HexagonalRealEstate.Domain.PersonDomain.Objects
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
-                return false;
-
             var person = (Person)obj;
             return person.SurrogateId == this.SurrogateId;
         }

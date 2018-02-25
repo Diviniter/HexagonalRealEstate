@@ -1,5 +1,4 @@
-﻿using System;
-using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
 using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
 
@@ -12,11 +11,6 @@ namespace HexagonalRealEstate.Domain.AccomodationDomain.Service
 
         public AccomodationServiceImpl(AccomodationRepository accomodationRepository, AccomodationQuery accomodationQuery)
         {
-            if (accomodationRepository == null)
-                throw new ArgumentNullException(nameof(accomodationRepository));
-            if (accomodationQuery == null)
-                throw new ArgumentNullException(nameof(accomodationQuery));
-
             this.accomodationRepository = accomodationRepository;
             this.AccomodationQuery = accomodationQuery;
         }

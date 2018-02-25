@@ -1,5 +1,4 @@
-﻿using System;
-using HexagonalRealEstate.Domain.PersonDomain.Objects;
+﻿using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Repositories;
 
 namespace HexagonalRealEstate.Domain.PersonDomain.Services
@@ -10,8 +9,6 @@ namespace HexagonalRealEstate.Domain.PersonDomain.Services
 
         public PersonServiceImpl(PersonRepository personRepository)
         {
-            if (personRepository == null)
-                throw new ArgumentNullException(nameof(personRepository));
             this.personRepository = personRepository;
         }
 

@@ -1,4 +1,5 @@
-﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects.Properties;
+﻿using System;
+using HexagonalRealEstate.Domain.AccomodationDomain.Objects.Properties;
 using NFluent;
 using Xunit;
 
@@ -17,7 +18,6 @@ namespace HexagonalRealEstate.Tests.Domain.AccomodationDomain
         }
 
         [Theory]
-        [InlineData(null)]
         [InlineData("")]
         [InlineData("A1")]
         [InlineData("A12")]
@@ -32,6 +32,13 @@ namespace HexagonalRealEstate.Tests.Domain.AccomodationDomain
             var accomodation = AccomodationNumber.Create(number);
 
             Check.That(accomodation.IsFailure).IsTrue();
+        }
+
+        [Fact]
+        public void ShouldThrowExceptionWhenNumberIsNull()
+        {
+            Check.ThatCode(() => { AccomodationNumber.Create(null); })
+                .Throws<ArgumentNullException>();
         }
 
         [Fact]

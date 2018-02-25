@@ -1,5 +1,4 @@
-﻿using System;
-using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
 using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
 using HexagonalRealEstate.Domain.ClientDomain.Events;
@@ -22,13 +21,6 @@ namespace HexagonalRealEstate.Domain.ClientDomain.Services
             AccomodationQuery accomodationQuery,
             IMediator mediator)
         {
-            if (personRepository == null)
-                throw new ArgumentNullException(nameof(personRepository));
-            if (personQuery == null)
-                throw new ArgumentNullException(nameof(personQuery));
-            if (accomodationQuery == null)
-                throw new ArgumentNullException(nameof(accomodationQuery));
-
             this.personRepository = personRepository;
             this.personQuery = personQuery;
             this.accomodationQuery = accomodationQuery;
@@ -37,8 +29,6 @@ namespace HexagonalRealEstate.Domain.ClientDomain.Services
 
         public void SellAccomodation(PersonId person, AccomodationId accomodation)
         {
-            this.CheckThatParametersAreNotNull(person, accomodation);
-
             this.ThrowExceptionIfAccomodationDoesNotExistInRepository(accomodation);
             this.ThrowExceptionIfPersonDoesNotExistInRepository(person);
             this.ThrowExceptionWhenAccomodationIsAlreadySold(accomodation);
@@ -53,14 +43,6 @@ namespace HexagonalRealEstate.Domain.ClientDomain.Services
             var accomodationAlreadySold = this.personQuery.IsAccomodationSold(accomodation);
             if (accomodationAlreadySold)
                 throw new AccomodationAlreadySoldException();
-        }
-
-        private void CheckThatParametersAreNotNull(PersonId person, AccomodationId accomodation)
-        {
-            if (person == null)
-                throw new ArgumentNullException(nameof(person));
-            if (accomodation == null)
-                throw new ArgumentNullException(nameof(accomodation));
         }
 
         private void ThrowExceptionIfAccomodationDoesNotExistInRepository(AccomodationId accomodation)
