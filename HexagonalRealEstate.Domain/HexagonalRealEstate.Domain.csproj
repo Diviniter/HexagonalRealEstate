@@ -32,8 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSharpFunctionalExtensions, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSharpFunctionalExtensions.1.8.1\lib\net461\CSharpFunctionalExtensions.dll</HintPath>
+    <Reference Include="CSharpFunctionalExtensions, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharpFunctionalExtensions.1.9.0\lib\net461\CSharpFunctionalExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MediatR, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.4.0.1\lib\net45\MediatR.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -55,9 +59,11 @@
     <Compile Include="AccomodationDomain\Service\AccomodationService.cs" />
     <Compile Include="AccomodationDomain\Service\AccomodationServiceImpl.cs" />
     <Compile Include="AccomodationDomain\Objects\AccomodationId.cs" />
+    <Compile Include="ClientDomain\Events\AccomodationSoldDomainEvent.cs" />
     <Compile Include="ClientDomain\Objects\Client.cs" />
     <Compile Include="ClientDomain\Services\ClientService.cs" />
     <Compile Include="AccomodationDomain\Exceptions\AccomodationAlreadySoldException.cs" />
+    <Compile Include="General\Service.cs" />
     <Compile Include="General\StringValidator.cs" />
     <Compile Include="PersonDomain\Exceptions\PersonDoesNotExistException.cs" />
     <Compile Include="PersonDomain\Objects\PersonId.cs" />
@@ -69,7 +75,6 @@
     <Compile Include="PersonDomain\Services\PersonServiceImpl.cs" />
     <Compile Include="ProspectDomain\Exceptions\AlreadyProspectOnAccomodationException.cs" />
     <Compile Include="ClientDomain\Services\ClientServiceImpl.cs" />
-    <Compile Include="ProspectDomain\Services\ProspectNotificationService.cs" />
     <Compile Include="ProspectDomain\Services\ProspectService.cs" />
     <Compile Include="PersonDomain\Repositories\PersonRepository.cs" />
     <Compile Include="PersonDomain\Objects\Person.cs" />
@@ -83,9 +88,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClientDomain\Events\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

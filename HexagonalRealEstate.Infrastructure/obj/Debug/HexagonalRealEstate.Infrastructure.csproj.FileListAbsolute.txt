@@ -54,3 +54,4 @@ C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\Hexago
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.dll
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\MediatR.dll

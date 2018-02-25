@@ -19,7 +19,6 @@ namespace HexagonalRealEstate.Domain.AccomodationDomain.Service
 
             this.accomodationRepository = accomodationRepository;
             this.AccomodationQuery = accomodationQuery;
-
         }
 
         public void CreateAccomodation(Accomodation accomodation)

@@ -1,14 +1,16 @@
-﻿using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
+﻿using System.Reflection;
+using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
 using HexagonalRealEstate.Domain.AccomodationDomain.Service;
 using HexagonalRealEstate.Domain.ClientDomain.Services;
 using HexagonalRealEstate.Domain.PersonDomain.Repositories;
 using HexagonalRealEstate.Domain.PersonDomain.Services;
 using HexagonalRealEstate.Domain.ProspectDomain.Services;
 using HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories;
-using HexagonalRealEstate.Infrastructure.Dependencies.Notifications;
+using HexagonalRealEstate.Infrastructure.EventsHandlers;
 using HexagonalRealEstate.Infrastructure.View;
 using HexagonalRealEstate.Infrastructure.View.Controllers;
 using Unity;
+using Unity.Lifetime;
 
 namespace HexagonalRealEstate
 {
@@ -30,8 +32,6 @@ namespace HexagonalRealEstate
                     _container.RegisterType<Controller, ControllerImpl>();
                     _container.RegisterType<WriteStrategy, ConsoleStrategy>();
 
-                    _container.RegisterType<ProspectNotificationService, ProspectNotificationServiceImpl>();
-
                     _container.RegisterType<AccomodationRepository, AccomodationRepositoryImpl>();
                     _container.RegisterType<PersonRepository, PersonRepositoryImpl>();
 
@@ -39,7 +39,11 @@ namespace HexagonalRealEstate
                     _container.RegisterType<AccomodationQuery, AccomodationQueryImpl>();
                     _container.RegisterType<PersonQueryExtended, PersonQueryImpl>();
                     _container.RegisterType<AccomodationQueryExtended, AccomodationQueryImpl>();
+
+                    _container.RegisterMediator(new HierarchicalLifetimeManager())
+                              .RegisterMediatorHandlers(Assembly.GetAssembly(typeof(NotifyProspectsWhenAccomodationIsSoldDomainEventHandler)));
                 }
+
                 return _container;
             }
         }

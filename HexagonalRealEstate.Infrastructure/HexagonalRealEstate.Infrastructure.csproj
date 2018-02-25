@@ -42,6 +42,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MediatR, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.4.0.1\lib\net45\MediatR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -64,9 +68,9 @@
     <Compile Include="Dependencies\DataAccessLayer\Repositories\PersonQueryExtended.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Repositories\AccomodationQueryImpl.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Repositories\PersonQueryImpl.cs" />
-    <Compile Include="Dependencies\Notifications\ProspectNotificationServiceImpl.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Repositories\PersonRepositoryImpl.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Database.cs" />
+    <Compile Include="EventsHandlers\NotifyProspectsWhenAccomodationIsSoldDomainEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Controllers\Controller.cs" />
     <Compile Include="View\Controllers\ControllerImpl.cs" />

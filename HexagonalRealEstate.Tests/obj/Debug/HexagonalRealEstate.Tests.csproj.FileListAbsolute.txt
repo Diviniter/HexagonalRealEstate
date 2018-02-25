@@ -107,3 +107,4 @@ C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\Hexago
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Tests\obj\Debug\HexagonalRealEstate.Tests.csprojResolveAssemblyReference.cache
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Tests\obj\Debug\HexagonalRealEstate.Tests.dll
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Tests\obj\Debug\HexagonalRealEstate.Tests.pdb
+C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Tests\bin\Debug\MediatR.dll

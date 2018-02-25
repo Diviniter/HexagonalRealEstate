@@ -1,5 +1,4 @@
 ﻿using System;
-using HexagonalRealEstate.Infrastructure;
 
 namespace HexagonalRealEstate.Infrastructure.View
 {

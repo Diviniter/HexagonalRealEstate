@@ -2,10 +2,11 @@
 using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
 using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
+using HexagonalRealEstate.Domain.ClientDomain.Events;
 using HexagonalRealEstate.Domain.PersonDomain.Exceptions;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Repositories;
-using HexagonalRealEstate.Domain.ProspectDomain.Services;
+using MediatR;
 
 namespace HexagonalRealEstate.Domain.ClientDomain.Services
 {
@@ -13,25 +14,25 @@ namespace HexagonalRealEstate.Domain.ClientDomain.Services
     {
         private readonly PersonQuery personQuery;
         private readonly AccomodationQuery accomodationQuery;
+        private readonly IMediator mediator;
         private readonly PersonRepository personRepository;
-        private readonly ProspectNotificationService prospectNotificationService;
 
-        public ClientServiceImpl(PersonRepository personRepository, ProspectNotificationService prospectNotificationService,
-            PersonQuery personQuery, AccomodationQuery accomodationQuery)
+        public ClientServiceImpl(PersonRepository personRepository,
+            PersonQuery personQuery,
+            AccomodationQuery accomodationQuery,
+            IMediator mediator)
         {
             if (personRepository == null)
                 throw new ArgumentNullException(nameof(personRepository));
-            if (prospectNotificationService == null)
-                throw new ArgumentNullException(nameof(prospectNotificationService));
             if (personQuery == null)
                 throw new ArgumentNullException(nameof(personQuery));
             if (accomodationQuery == null)
                 throw new ArgumentNullException(nameof(accomodationQuery));
 
             this.personRepository = personRepository;
-            this.prospectNotificationService = prospectNotificationService;
             this.personQuery = personQuery;
             this.accomodationQuery = accomodationQuery;
+            this.mediator = mediator;
         }
 
         public void SellAccomodation(PersonId person, AccomodationId accomodation)
@@ -44,7 +45,7 @@ namespace HexagonalRealEstate.Domain.ClientDomain.Services
 
             this.personRepository.SellAccomodation(person, accomodation);
 
-            this.prospectNotificationService.NotifyAccomodationIsNoMoreAvailable(accomodation);
+            this.mediator.Publish(new AccomodationSoldDomainEvent(accomodation));
         }
 
         private void ThrowExceptionWhenAccomodationIsAlreadySold(AccomodationId accomodation)
