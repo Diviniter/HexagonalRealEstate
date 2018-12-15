@@ -1,5 +1,0 @@
-C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat\bin\Debug\HexagonalCat.exe.config
-C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat\bin\Debug\HexagonalCat.exe
-C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat\bin\Debug\HexagonalCat.pdb
-C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat\obj\Debug\HexagonalCat.exe
-C:\Users\damien\documents\visual studio 2015\Projects\HexagonalCat\HexagonalCat\obj\Debug\HexagonalCat.pdb
