@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
+using HexagonalRealEstate.Helpers;
 using HexagonalRealEstate.Infrastructure.Dependencies.Entities;
-using HexagonalRealEstate.Infrastructure.View.Helpers;
-using HexagonalRealEstate.Infrastructure.View.Models;
+using HexagonalRealEstate.ViewsModels;
+using Optional.Unsafe;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories
 {
@@ -18,7 +19,7 @@ namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Reposi
         public bool IsProspectOnThisAccomodation(PersonId person, AccomodationId accomodation)
         {
             return Database.Prospects
-                .Where(p => p.Person.Id == person.SurrogateId)
+                .Where(p => p.Person.Id == person.SurrogateId.ValueOrFailure())
                 .Any(p => p.Accomodation.Number == accomodation.Number);
         }
 
@@ -36,7 +37,7 @@ namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Reposi
 
         public bool Exist(PersonId person)
         {
-            return Database.Persons.Any(a => a.Id == person.SurrogateId);
+            return Database.Persons.Any(a => a.Id == person.SurrogateId.ValueOrFailure());
         }
 
         public bool WithSameName(string firstName, string name)

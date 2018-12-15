@@ -3,106 +3,80 @@ using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
 using HexagonalRealEstate.Domain.PersonDomain.Exceptions;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
+using HexagonalRealEstate.Domain.PersonDomain.Objects.Properties;
 using HexagonalRealEstate.Domain.PersonDomain.Repositories;
 using HexagonalRealEstate.Domain.ProspectDomain.Services;
 using HexagonalRealEstate.Tests.Domain.AccomodationDomain;
 using HexagonalRealEstate.Tests.Domain.PersonDomain;
 using NFluent;
 using NSubstitute;
+using Optional;
+using System;
 using Xunit;
 
 namespace HexagonalRealEstate.Tests.Domain.ProspectDomain
 {
     public class ProspectServiceImplTest
     {
-        class ProspectServiceImplHelper
+        public ProspectServiceImpl prospectService;
+        public Person person;
+        public Accomodation accomodation;
+        public PersonRepository personRepository;
+        public PersonQuery personQuery;
+        public AccomodationQuery accomodationQuery;
+
+        public ProspectServiceImplTest()
         {
-            public ProspectServiceImpl ProspectServiceImpl;
-            public Person Person;
-            public Accomodation Accomodation;
-            public PersonRepository PersonRepository;
-            public PersonQuery PersonQuery;
-            public AccomodationQuery AccomodationQuery;
-        }
+            this.person = PersonTest.GetPerson(Option.None<PersonFirstName>(),
+                Option.None<PersonName>(), Option.None<PersonEmail>());
+            this.personRepository = Substitute.For<PersonRepository>();
 
-        private ProspectServiceImplHelper CreateProspectDefaultConfiguration()
-        {
-            var person = PersonTest.GetPerson();
-            var personRepository = Substitute.For<PersonRepository>();
+            this.accomodation = AccomodationTest.GetAccomodation();
 
-            var accomodation = AccomodationTest.GetAccomodation();
+            this.personQuery = Substitute.For<PersonQuery>();
+            this.personQuery.Exist(this.person).Returns(true);
+            this.personQuery.IsProspectOnThisAccomodation(this.person, this.accomodation).Returns(false);
 
-            var personQuery = Substitute.For<PersonQuery>();
-            personQuery.Exist(person).Returns(true);
-            personQuery.IsProspectOnThisAccomodation(person, accomodation).Returns(false);
+            this.accomodationQuery = Substitute.For<AccomodationQuery>();
+            this.accomodationQuery.Exist(this.accomodation).Returns(true);
 
-            var accomodationQuery = Substitute.For<AccomodationQuery>();
-            accomodationQuery.Exist(accomodation).Returns(true);
-
-            var clientService = new ProspectServiceImpl(personRepository, personQuery, accomodationQuery);
-
-            return new ProspectServiceImplHelper
-            {
-                Person = person,
-                Accomodation = accomodation,
-                PersonRepository = personRepository,
-                PersonQuery = personQuery,
-                AccomodationQuery = accomodationQuery,
-                ProspectServiceImpl = clientService
-            };
+            this.prospectService = new ProspectServiceImpl(this.personRepository, this.personQuery, this.accomodationQuery);
         }
 
         [Fact]
         public void CreateProspectShouldCallRepository()
         {
-            //Init
-            var defaultConfiguration = this.CreateProspectDefaultConfiguration();
-            var person = defaultConfiguration.Person;
-            var accomodation = defaultConfiguration.Accomodation;
-            var prospectService = defaultConfiguration.ProspectServiceImpl;
-            var personRepository = defaultConfiguration.PersonRepository;
-
             //Action
-            prospectService.CreateProspect(person, accomodation);
+            this.prospectService.CreateProspect(this.person, this.accomodation);
 
             //Assert
-            personRepository.Received().CreateProspect(person, accomodation);
+            this.personRepository.Received().CreateProspect(this.person, this.accomodation);
         }
 
         [Fact]
         public void CreateProspectShouldThrowExceptionWhenPersonDoesNotExist()
         {
             //Init
-            var defaultConfiguration = this.CreateProspectDefaultConfiguration();
-            var person = defaultConfiguration.Person;
-            var accomodation = defaultConfiguration.Accomodation;
-            var prospectService = defaultConfiguration.ProspectServiceImpl;
-            var personRepository = defaultConfiguration.PersonQuery;
+            this.personQuery.Exist(this.person).Returns(false);
 
-            personRepository.Exist(person).Returns(false);
+            //Act
+            Action action = () => { this.prospectService.CreateProspect(this.person, this.accomodation); };
 
-            //Action
             //Assert
-            Check.ThatCode(() => { prospectService.CreateProspect(person, accomodation); })
-                .Throws<PersonDoesNotExistException>();
+            Check.ThatCode(action).Throws<PersonDoesNotExistException>();
         }
 
         [Fact]
         public void CreateProspectShouldThrowExceptionWhenAccomodationDoesNotExist()
         {
             //Init
-            var defaultConfiguration = this.CreateProspectDefaultConfiguration();
-            var person = defaultConfiguration.Person;
-            var accomodation = defaultConfiguration.Accomodation;
-            var prospectService = defaultConfiguration.ProspectServiceImpl;
-            var accomodationQuery = defaultConfiguration.AccomodationQuery;
+            this.accomodationQuery.Exist(this.accomodation).Returns(false);
 
-            accomodationQuery.Exist(accomodation).Returns(false);
+            //Act
+            Action action = () => { this.prospectService.CreateProspect(this.person, this.accomodation); };
 
-            //Action
             //Assert
-            Check.ThatCode(() => { prospectService.CreateProspect(person, accomodation); })
-                .Throws<AccomodationDoesNotExistException>();
+            Check.ThatCode(action).Throws<AccomodationDoesNotExistException>();
         }
     }
 }

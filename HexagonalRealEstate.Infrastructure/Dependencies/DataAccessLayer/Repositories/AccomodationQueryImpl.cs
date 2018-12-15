@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+using HexagonalRealEstate.Helpers;
 using HexagonalRealEstate.Infrastructure.Dependencies.Entities;
-using HexagonalRealEstate.Infrastructure.View.Helpers;
-using HexagonalRealEstate.Infrastructure.View.Models;
+using HexagonalRealEstate.ViewsModels;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories
 {

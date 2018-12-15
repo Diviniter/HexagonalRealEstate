@@ -1,9 +1,9 @@
-﻿using CSharpFunctionalExtensions;
-using HexagonalRealEstate.Domain.PersonDomain.Objects;
+﻿using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects.Properties;
 using HexagonalRealEstate.Domain.PersonDomain.Repositories;
 using HexagonalRealEstate.Domain.PersonDomain.Services;
 using NSubstitute;
+using Optional;
 using Xunit;
 
 namespace HexagonalRealEstate.Tests.Domain.PersonDomain
@@ -13,7 +13,7 @@ namespace HexagonalRealEstate.Tests.Domain.PersonDomain
         private Person GetDefaultPerson()
         {
             return new Person(
-                Maybe<string>.None,
+                Option.None<string>(),
                 firstName: PersonFirstName.Create("firstname").Value,
                 name: PersonName.Create("name").Value,
                 email: PersonEmail.Create("email@email.fr").Value

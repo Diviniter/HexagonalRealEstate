@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalRealEstate", "HexagonalRealEstate\HexagonalRealEstate.csproj", "{FDA1DF40-D4BF-4DF9-A3FF-DF63CAD76565}"
 EndProject
@@ -10,6 +10,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalRealEstate.Domain", "HexagonalRealEstate.Domain\HexagonalRealEstate.Domain.csproj", "{04FAFBD7-4AE9-4171-9258-580440AA6EEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalRealEstate.Infrastructure", "HexagonalRealEstate.Infrastructure\HexagonalRealEstate.Infrastructure.csproj", "{212EF14D-CE0A-4BD6-8CEE-4B0A75E9531E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonalRealEstate.ViewsModels", "HexagonalRealEstate.ViewsModels\HexagonalRealEstate.ViewsModels.csproj", "{15729027-E7B0-4E4B-B73A-257C90892C46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28FB8010-824E-4A62-889F-85C25D78726E}"
+	ProjectSection(SolutionItems) = preProject
+		Decisions helpers.txt = Decisions helpers.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +40,15 @@ Global
 		{212EF14D-CE0A-4BD6-8CEE-4B0A75E9531E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{212EF14D-CE0A-4BD6-8CEE-4B0A75E9531E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{212EF14D-CE0A-4BD6-8CEE-4B0A75E9531E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15729027-E7B0-4E4B-B73A-257C90892C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15729027-E7B0-4E4B-B73A-257C90892C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15729027-E7B0-4E4B-B73A-257C90892C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15729027-E7B0-4E4B-B73A-257C90892C46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {300FCE8F-745E-4AC9-A05B-E09F8A929080}
 	EndGlobalSection
 EndGlobal

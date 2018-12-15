@@ -1,9 +1,9 @@
 ﻿using HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Entities;
-using HexagonalRealEstate.Infrastructure.View.Models;
+using HexagonalRealEstate.ViewsModels;
 
-namespace HexagonalRealEstate.Infrastructure.View.Helpers
+namespace HexagonalRealEstate.Helpers
 {
-    public static class EntitiesToModelConverter
+    public static class EntitiesToModelMapping
     {
         public static AccomodationModel ToModel(this AccomodationEntity accomodation)
         {

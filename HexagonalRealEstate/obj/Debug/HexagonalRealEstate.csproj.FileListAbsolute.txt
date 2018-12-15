@@ -133,3 +133,36 @@ C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\Hexago
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.RegistrationByConvention.pdb
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.ServiceLocation.pdb
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\MediatR.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.exe.config
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.exe
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\CommonServiceLocator.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Domain.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\MediatR.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Abstractions.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Configuration.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Container.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.Configuration.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.RegistrationByConvention.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.ServiceLocation.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Domain.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\CommonServiceLocator.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Abstractions.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Configuration.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Container.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.Interception.Configuration.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.RegistrationByConvention.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Unity.ServiceLocation.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.exe
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.csprojAssemblyReference.cache
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.csproj.CoreCompileInputs.cache
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\obj\Debug\HexagonalRealEstate.csproj.CopyComplete
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.ViewsModels.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\HexagonalRealEstate.ViewsModels.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Optional.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate\bin\Debug\Optional.xml

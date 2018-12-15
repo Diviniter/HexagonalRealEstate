@@ -1,4 +1,4 @@
-﻿namespace HexagonalRealEstate.Infrastructure.View.Models
+﻿namespace HexagonalRealEstate.ViewsModels
 {
     public class PersonModel
     {
@@ -9,7 +9,7 @@
 
         public override string ToString()
         {
-            return $"{this.FirstName} {this.Name}";
+            return $"{FirstName} {Name}";
         }
     }
 }

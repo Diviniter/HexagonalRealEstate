@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Repositories;
-using HexagonalRealEstate.Infrastructure.View.Models;
+using HexagonalRealEstate.ViewsModels;
+using System.Collections.Generic;
 
 namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories
 {

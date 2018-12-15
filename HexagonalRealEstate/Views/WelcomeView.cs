@@ -1,4 +1,4 @@
-﻿using HexagonalRealEstate.Infrastructure.View.Helpers;
+﻿using HexagonalRealEstate.Views.Helpers;
 using System;
 using System.Collections.Generic;
 using static HexagonalRealEstate.Views.AccomodationResponsibleView;

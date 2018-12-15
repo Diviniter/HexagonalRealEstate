@@ -6,12 +6,15 @@ namespace HexagonalRealEstate.Tests.Domain.PersonDomain
 {
     public class PersonEmailTest
     {
-        [Fact]
-        public void EmailShouldHaveEmailFormat()
+        [Theory]
+        [InlineData("test@test.fr")]
+        [InlineData("test@test.com")]
+        [InlineData("test.test@test.com")]
+        public void EmailShouldBeWellFormed(string validEmail)
         {
-            var stringEmail = "test@test.fr";
-            var email = PersonEmail.Create(stringEmail);
-            Check.That<string>(email.Value.Value).IsEqualTo("test@test.fr");
+            var email = PersonEmail.Create(validEmail);
+
+            Check.That(email.IsSuccess).IsTrue();
         }
 
         [Theory]
@@ -25,6 +28,7 @@ namespace HexagonalRealEstate.Tests.Domain.PersonDomain
         public void EmailShouldNotHaveAnotherFormatThanEmail(string invalidEmail)
         {
             var email = PersonEmail.Create(invalidEmail);
+
             Check.That(email.IsFailure).IsTrue();
         }
 
@@ -32,7 +36,9 @@ namespace HexagonalRealEstate.Tests.Domain.PersonDomain
         public void EmailShouldCanBeEmpty()
         {
             var stringEmail = "";
+
             var email = PersonEmail.Create(stringEmail);
+
             Check.That(email.IsSuccess).IsTrue();
         }
 
@@ -40,8 +46,9 @@ namespace HexagonalRealEstate.Tests.Domain.PersonDomain
         public void EmailShouldBeEqualsToSameEmail()
         {
             var stringEmail = "";
-            var email = PersonEmail.Create(stringEmail).Value;
             var email2 = PersonEmail.Create(stringEmail).Value;
+
+            var email = PersonEmail.Create(stringEmail).Value;
 
             Check.That(email).IsEqualTo(email2);
         }

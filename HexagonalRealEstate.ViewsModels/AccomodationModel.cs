@@ -1,4 +1,4 @@
-﻿namespace HexagonalRealEstate.Infrastructure.View.Models
+﻿namespace HexagonalRealEstate.ViewsModels
 {
     public class AccomodationModel
     {
@@ -6,7 +6,7 @@
 
         public override string ToString()
         {
-            return this.Number;
+            return Number;
         }
     }
 }

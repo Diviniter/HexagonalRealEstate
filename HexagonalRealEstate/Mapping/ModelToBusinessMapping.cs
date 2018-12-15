@@ -1,14 +1,15 @@
 ﻿using HexagonalRealEstate.Domain.PersonDomain.Objects;
-using HexagonalRealEstate.Infrastructure.View.Models;
+using HexagonalRealEstate.ViewsModels;
+using Optional;
 
-namespace HexagonalRealEstate.Infrastructure.View.Helpers
+namespace HexagonalRealEstate.Mapping
 {
-    public static class BusinesstoModelConverter
+    public static class ModelToBusinessMapping
     {
         public static PersonId ToBusinessId(this PersonModel person)
         {
             return new PersonId(
-                surrogateId: person.Id
+                surrogateId: Option.Some(person.Id)
             );
         }
     }

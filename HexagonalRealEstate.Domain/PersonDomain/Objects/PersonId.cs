@@ -1,12 +1,12 @@
-﻿using CSharpFunctionalExtensions;
+﻿using Optional;
 
 namespace HexagonalRealEstate.Domain.PersonDomain.Objects
 {
     public class PersonId
     {
-        public readonly Maybe<string> SurrogateId;
+        public readonly Option<string> SurrogateId;
 
-        public PersonId(Maybe<string> surrogateId)
+        public PersonId(Option<string> surrogateId)
         {
             this.SurrogateId = surrogateId;
         }

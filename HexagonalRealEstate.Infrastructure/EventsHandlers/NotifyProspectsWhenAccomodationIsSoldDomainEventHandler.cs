@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using HexagonalRealEstate.Domain.ClientDomain.Events;
+﻿using HexagonalRealEstate.Domain.ClientDomain.Events;
 using HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories;
 using HexagonalRealEstate.Infrastructure.View;
 using MediatR;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace HexagonalRealEstate.Infrastructure.EventsHandlers
 {

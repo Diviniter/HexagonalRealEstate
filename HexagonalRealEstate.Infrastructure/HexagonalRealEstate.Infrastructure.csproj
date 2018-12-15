@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HexagonalRealEstate.Infrastructure</RootNamespace>
     <AssemblyName>HexagonalRealEstate.Infrastructure</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +47,9 @@
       <HintPath>..\packages\MediatR.4.0.1\lib\net45\MediatR.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Optional, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Optional.4.0.0\lib\net45\Optional.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -57,9 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dependencies\WriteStrategy.cs" />
+    <Compile Include="EventsHandlers\ConsoleStrategy.cs" />
+    <Compile Include="Mapping\EntitiesToModelMapping.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Repositories\AccomodationRepositoryImpl.cs" />
-    <Compile Include="Converters\BusinessToEntitiesConverter.cs" />
-    <Compile Include="Converters\EntitiesToBusinessConverter.cs" />
+    <Compile Include="Mapping\BusinessToEntitiesMapping.cs" />
+    <Compile Include="Mapping\EntitiesToBusinessMapping.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Entities\AccomodationEntity.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Entities\ProspectEntity.cs" />
     <Compile Include="Dependencies\DataAccessLayer\Entities\ClientEntity.cs" />
@@ -72,22 +79,6 @@
     <Compile Include="Dependencies\DataAccessLayer\Database.cs" />
     <Compile Include="EventsHandlers\NotifyProspectsWhenAccomodationIsSoldDomainEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Controllers\Controller.cs" />
-    <Compile Include="View\Controllers\ControllerImpl.cs" />
-    <Compile Include="View\Helpers\ArgumentNullExceptionExtension.cs" />
-    <Compile Include="View\Helpers\EntitiesToModelConverter.cs" />
-    <Compile Include="View\Helpers\ModelToBusinessConverter.cs" />
-    <Compile Include="View\Helpers\View.cs" />
-    <Compile Include="View\ConsoleStrategy.cs" />
-    <Compile Include="View\Helpers\BusinessToModelConverter.cs" />
-    <Compile Include="View\Models\ActionModel.cs" />
-    <Compile Include="View\Models\CreateAccomodationModel.cs" />
-    <Compile Include="View\Models\CreatePersonModel.cs" />
-    <Compile Include="View\Models\SellAccomodationModel.cs" />
-    <Compile Include="View\Models\PersonModel.cs" />
-    <Compile Include="View\Models\AccomodationModel.cs" />
-    <Compile Include="View\Models\CreateProspectModel.cs" />
-    <Compile Include="View\WriteStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -96,6 +87,10 @@
     <ProjectReference Include="..\HexagonalRealEstate.Domain\HexagonalRealEstate.Domain.csproj">
       <Project>{04FAFBD7-4AE9-4171-9258-580440AA6EEB}</Project>
       <Name>HexagonalRealEstate.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexagonalRealEstate.ViewsModels\HexagonalRealEstate.ViewsModels.csproj">
+      <Project>{15729027-E7B0-4E4B-B73A-257C90892C46}</Project>
+      <Name>HexagonalRealEstate.ViewsModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

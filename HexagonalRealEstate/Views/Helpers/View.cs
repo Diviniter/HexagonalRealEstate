@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HexagonalRealEstate.Infrastructure.View.Helpers
+namespace HexagonalRealEstate.Views.Helpers
 {
     public static class View
     {
@@ -40,7 +40,9 @@ namespace HexagonalRealEstate.Infrastructure.View.Helpers
                 }
 
                 if (index == 10)
+                {
                     break;
+                }
 
                 var key = mapping[index];
                 choices[key]();
@@ -97,9 +99,14 @@ namespace HexagonalRealEstate.Infrastructure.View.Helpers
                 Console.WriteLine("2 : No");
                 var selection = Console.ReadLine() ?? string.Empty;
                 if (selection == "1")
+                {
                     return true;
+                }
+
                 if (selection == "2")
+                {
                     return false;
+                }
 
                 Console.WriteLine("Select a number in the list");
             } while (true);
@@ -114,9 +121,13 @@ namespace HexagonalRealEstate.Infrastructure.View.Helpers
                 result = Console.ReadLine();
                 var selection = Console.ReadLine() ?? string.Empty;
                 if (!selection.All(char.IsDigit))
+                {
                     Console.WriteLine("Select a number");
+                }
                 else
+                {
                     break;
+                }
             } while (true);
 
             return int.Parse(result);
@@ -128,7 +139,9 @@ namespace HexagonalRealEstate.Infrastructure.View.Helpers
             var line = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(line))
+            {
                 return null;
+            }
 
             return line;
         }

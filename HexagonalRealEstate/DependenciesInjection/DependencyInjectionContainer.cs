@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+﻿using HexagonalRealEstate.Controllers;
 using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
 using HexagonalRealEstate.Domain.AccomodationDomain.Service;
 using HexagonalRealEstate.Domain.ClientDomain.Services;
@@ -8,7 +8,7 @@ using HexagonalRealEstate.Domain.ProspectDomain.Services;
 using HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories;
 using HexagonalRealEstate.Infrastructure.EventsHandlers;
 using HexagonalRealEstate.Infrastructure.View;
-using HexagonalRealEstate.Infrastructure.View.Controllers;
+using System.Reflection;
 using Unity;
 using Unity.Lifetime;
 

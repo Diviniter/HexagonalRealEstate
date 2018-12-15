@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HexagonalRealEstate</RootNamespace>
     <AssemblyName>HexagonalRealEstate</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,9 +38,13 @@
       <HintPath>..\packages\Unity.5.5.6\lib\net45\CommonServiceLocator.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CSharpFunctionalExtensions, Version=1.9.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="MediatR, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MediatR.4.0.1\lib\net45\MediatR.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Optional, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Optional.4.0.0\lib\net45\Optional.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -79,8 +84,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyInjectionContainer.cs" />
-    <Compile Include="UnityExtension.cs" />
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\ControllerImpl.cs" />
+    <Compile Include="DependenciesInjection\DependencyInjectionContainer.cs" />
+    <Compile Include="Exceptions\ArgumentNullExceptionExtension.cs" />
+    <Compile Include="Mapping\BusinessToModelMapping.cs" />
+    <Compile Include="Mapping\ModelToBusinessMapping.cs" />
+    <Compile Include="Views\Helpers\View.cs" />
+    <Compile Include="ModelsExtensions\CreateAccomodationModelExtension.cs" />
+    <Compile Include="ModelsExtensions\CreatePersonModelExtension.cs" />
+    <Compile Include="ModelsExtensions\CreateProspectModelExtension.cs" />
+    <Compile Include="ModelsExtensions\SellAccomodationModelExtension.cs" />
+    <Compile Include="DependenciesInjection\UnityExtension.cs" />
     <Compile Include="Views\SellerView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +114,10 @@
     <ProjectReference Include="..\HexagonalRealEstate.Infrastructure\HexagonalRealEstate.Infrastructure.csproj">
       <Project>{212EF14D-CE0A-4BD6-8CEE-4B0A75E9531E}</Project>
       <Name>HexagonalRealEstate.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexagonalRealEstate.ViewsModels\HexagonalRealEstate.ViewsModels.csproj">
+      <Project>{15729027-E7B0-4E4B-B73A-257C90892C46}</Project>
+      <Name>HexagonalRealEstate.ViewsModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

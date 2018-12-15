@@ -1,5 +1,4 @@
-﻿using CSharpFunctionalExtensions;
-using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
 using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.AccomodationDomain.Repositories;
 using HexagonalRealEstate.Domain.ClientDomain.Services;
@@ -11,123 +10,90 @@ using HexagonalRealEstate.Tests.Domain.AccomodationDomain;
 using MediatR;
 using NFluent;
 using NSubstitute;
+using Optional;
+using System;
 using Xunit;
 
 namespace HexagonalRealEstate.Tests.Domain.ClientDomain
 {
     public class ClientServiceImplTest
     {
-        class ClientServiceImplHelper
-        {
-            public ClientServiceImpl ClientServiceImpl;
-            public Person Person;
-            public Accomodation Accomodation;
-            public PersonRepository PersonRepository;
-            public PersonQuery PersonQuery;
-            public AccomodationQuery AccomodationQuery;
-        }
+        private readonly ClientServiceImpl clientService;
+        private readonly Person person;
+        private readonly Accomodation accomodation;
+        private readonly PersonRepository personRepository;
+        private readonly PersonQuery personQuery;
+        private readonly AccomodationQuery accomodationQuery;
 
-        private ClientServiceImplHelper SellAccomodationDefaultConfiguration()
+        public ClientServiceImplTest()
         {
-            var person = new Person(
-                Maybe<string>.None,
+            this.person = new Person(
+                Option.None<string>(),
                 PersonFirstName.Create("john").Value,
                 PersonName.Create("smith").Value,
                 PersonEmail.Create("email@email.fr").Value);
-            var personQuery = Substitute.For<PersonQuery>();
-            personQuery.Exist(person).Returns(true);
+            this.personQuery = Substitute.For<PersonQuery>();
+            this.personQuery.Exist(this.person).Returns(true);
 
             var mediator = Substitute.For<IMediator>();
-            var personRepository = Substitute.For<PersonRepository>();
+            this.personRepository = Substitute.For<PersonRepository>();
 
-            var accomodation = AccomodationTest.GetAccomodation();
-            var accomodationQuery = Substitute.For<AccomodationQuery>();
-            accomodationQuery.Exist(accomodation).Returns(true);
-            personQuery.IsAccomodationSold(accomodation).Returns(false);
+            this.accomodation = AccomodationTest.GetAccomodation();
+            this.accomodationQuery = Substitute.For<AccomodationQuery>();
+            this.accomodationQuery.Exist(this.accomodation).Returns(true);
+            this.personQuery.IsAccomodationSold(this.accomodation).Returns(false);
 
-            var clientService = new ClientServiceImpl(personRepository,
-                personQuery, accomodationQuery, mediator);
-
-            return new ClientServiceImplHelper
-            {
-                Person = person,
-                Accomodation = accomodation,
-                PersonRepository = personRepository,
-                PersonQuery = personQuery,
-                AccomodationQuery = accomodationQuery,
-                ClientServiceImpl = clientService
-            };
+            this.clientService = new ClientServiceImpl(this.personRepository,
+                this.personQuery, this.accomodationQuery, mediator);
         }
 
         [Fact]
-        public void SellAccomodationShouldCallRepository()
+        public void Should_Add()
         {
-            //Init
-            var defaultConfiguration = this.SellAccomodationDefaultConfiguration();
-            var person = defaultConfiguration.Person;
-            var accomodation = defaultConfiguration.Accomodation;
-            var personRepository = defaultConfiguration.PersonRepository;
-            var clientService = defaultConfiguration.ClientServiceImpl;
-
-            //Action
-            clientService.SellAccomodation(person, accomodation);
+            //Act
+            this.clientService.SellAccomodation(this.person, this.accomodation);
 
             //Assert
-            personRepository.Received().SellAccomodation(person, accomodation);
+            this.personRepository.Received().SellAccomodation(this.person, this.accomodation);
         }
 
         [Fact]
         public void SellAccomodationShouldThrowExceptionWhenPersonDoesNotExist()
         {
             //Init
-            var defaultConfiguration = this.SellAccomodationDefaultConfiguration();
-            var clientService = defaultConfiguration.ClientServiceImpl;
-            var person = defaultConfiguration.Person;
-            var accomodation = defaultConfiguration.Accomodation;
-            var personQuery = defaultConfiguration.PersonQuery;
+            this.personQuery.Exist(this.person).Returns(false);
 
-            personQuery.Exist(person).Returns(false);
+            //Act
+            Action sellAccomodation = () => { this.clientService.SellAccomodation(this.person, this.accomodation); };
 
-            //Action
             //Assert
-            Check.ThatCode(() => { clientService.SellAccomodation(person, accomodation); })
-                .Throws<PersonDoesNotExistException>();
+            Check.ThatCode(sellAccomodation).Throws<PersonDoesNotExistException>();
         }
 
         [Fact]
         public void SellAccomodationShouldThrowExceptionWhenAccomodationDoesNotExist()
         {
             //Init
-            var defaultConfiguration = this.SellAccomodationDefaultConfiguration();
-            var clientService = defaultConfiguration.ClientServiceImpl;
-            var person = defaultConfiguration.Person;
-            var accomodation = defaultConfiguration.Accomodation;
-            var accomodationQuery = defaultConfiguration.AccomodationQuery;
+            this.accomodationQuery.Exist(this.accomodation).Returns(false);
 
-            accomodationQuery.Exist(accomodation).Returns(false);
+            //Act
+            Action sellAccomodation = () => { this.clientService.SellAccomodation(this.person, this.accomodation); };
 
-            //Action
             //Assert
-            Check.ThatCode(() => { clientService.SellAccomodation(person, accomodation); })
-                .Throws<AccomodationDoesNotExistException>();
+            Check.ThatCode(sellAccomodation).Throws<AccomodationDoesNotExistException>();
         }
 
         [Fact]
         public void SellAccomodationShouldThrowExceptionWhenAccomodationIsAlreadySold()
         {
             //Init
-            var defaultConfiguration = this.SellAccomodationDefaultConfiguration();
-            var clientService = defaultConfiguration.ClientServiceImpl;
-            var person = defaultConfiguration.Person;
-            var accomodation = defaultConfiguration.Accomodation;
-            var personQuery = defaultConfiguration.PersonQuery;
+            this.personQuery.IsAccomodationSold(this.accomodation).Returns(true);
 
-            personQuery.IsAccomodationSold(accomodation).Returns(true);
+            //Act
+            Action sellAccomodation = () => { this.clientService.SellAccomodation(this.person, this.accomodation); };
 
-            //Action
             //Assert
-            Check.ThatCode(() => { clientService.SellAccomodation(person, accomodation); })
-                .Throws<AccomodationAlreadySoldException>();
+            Check.ThatCode(sellAccomodation).Throws<AccomodationAlreadySoldException>();
         }
 
         //TODO:How to test ?

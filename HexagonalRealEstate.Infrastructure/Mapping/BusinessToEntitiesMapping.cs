@@ -1,26 +1,21 @@
-﻿using System;
-using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Entities;
+using Optional.Unsafe;
+using System;
 
 namespace HexagonalRealEstate.Infrastructure.Converters
 {
-    public static class BusinessToEntitiesConverter
+    public static class BusinessToEntitiesMapping
     {
         public static PersonEntity ToEntity(this Person person)
         {
-            string email;
-            if (person.Email.HasValue)
-                email = person.Email.Value;
-            else
-                email = null;
-
             return new PersonEntity
             {
                 Id = Guid.NewGuid().ToString(),
                 FirstName = person.FirstName,
                 Name = person.Name,
-                Email = email
+                Email = person.Email.ValueOrDefault()
             };
         }
 

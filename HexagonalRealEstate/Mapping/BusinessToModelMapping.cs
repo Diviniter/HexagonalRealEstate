@@ -1,10 +1,10 @@
 ﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
-using HexagonalRealEstate.Infrastructure.View.Models;
+using HexagonalRealEstate.ViewsModels;
 
-namespace HexagonalRealEstate.Infrastructure.View.Helpers
+namespace HexagonalRealEstate.Mapping
 {
-    public static class BusinessToModelConverter
+    public static class BusinessToModelMapping
     {
         public static AccomodationModel ToModel(this Accomodation accomodation)
         {

@@ -1,41 +1,60 @@
-﻿using System;
-using CSharpFunctionalExtensions;
-using HexagonalRealEstate.Domain.PersonDomain.Objects;
+﻿using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects.Properties;
 using NFluent;
+using Optional;
+using Optional.Unsafe;
+using System;
 using Xunit;
 
 namespace HexagonalRealEstate.Tests.Domain.PersonDomain
 {
     public class PersonTest
     {
-        public static Person GetPerson(PersonFirstName firstName = null, PersonName name = null, PersonEmail email = null)
+        public static Person GetPerson(Option<PersonFirstName> firstName, Option<PersonName> name, Option<PersonEmail> email)
         {
             return new Person(
-                Maybe<string>.None,
-                firstName: firstName ?? PersonFirstName.Create("firstname").Value,
-                name: name ?? PersonName.Create("name").Value,
-                email: email ?? PersonEmail.Create("email@email.fr").Value
-                );
+                surrogateId: Option.None<string>(),
+                firstName: firstName.ValueOr(PersonFirstName.Create("firstname").Value),
+                name: name.ValueOr(PersonName.Create("name").Value),
+                email: email.Else(Option.None<PersonEmail>()));
+        }
+
+        public static Person GetPersonWithoutId()
+        {
+            return new Person(
+                surrogateId: Option.None<string>(),
+                firstName: PersonFirstName.Create("firstname").Value,
+                name: PersonName.Create("name").Value,
+                email: PersonEmail.Create("email@email.fr").Value);
         }
 
         [Fact]
         public void NameShouldBeTheSameAsConstructorParameter()
         {
-            var name = PersonName.Create("name").Value;
+            //Init
+            var firstName = Option.None<PersonFirstName>();
+            var name = Option.Some(PersonName.Create("name").Value);
+            var email = Option.None<PersonEmail>();
 
-            var person = GetPerson(name: name);
+            //Act
+            var person = GetPerson(firstName, name, email);
 
+            //Assert
             Check.That<string>(person.Name).Equals("name");
         }
 
         [Fact]
         public void FirstNameShouldBeTheSameAsConstructorParameter()
         {
-            var firstName = PersonFirstName.Create("firstname").Value;
+            //Init
+            var firstName = Option.Some(PersonFirstName.Create("firstname").Value);
+            var name = Option.None<PersonName>();
+            var email = Option.None<PersonEmail>();
 
-            var person = GetPerson(firstName: firstName);
+            //Act
+            var person = GetPerson(firstName, name, email);
 
+            //Assert
             Check.That<string>(person.FirstName).IsEqualTo("firstname");
         }
 
@@ -44,15 +63,17 @@ namespace HexagonalRealEstate.Tests.Domain.PersonDomain
         {
             PersonName name = null;
 
-            Check.ThatCode(() =>
+            Action action = () =>
             {
                 new Person(
-                    surrogateId: Maybe<string>.None,
+                    surrogateId: Option.None<string>(),
                     firstName: PersonFirstName.Create("firstname").Value,
                     name: name,
                     email: PersonEmail.Create("email@email.fr").Value
                 );
-            }).Throws<ArgumentException>();
+            };
+
+            Check.ThatCode(action).Throws<ArgumentException>();
         }
 
         [Fact]
@@ -60,37 +81,48 @@ namespace HexagonalRealEstate.Tests.Domain.PersonDomain
         {
             PersonFirstName firstName = null;
 
-            Check.ThatCode(() =>
+            Action action = () =>
             {
                 new Person(
-                    surrogateId: Maybe<string>.None,
+                    surrogateId: Option.None<string>(),
                     firstName: firstName,
                     name: PersonName.Create("name").Value,
                     email: PersonEmail.Create("email@email.fr").Value
                 );
-            }).Throws<ArgumentException>();
+            };
+
+            Check.ThatCode(action).Throws<ArgumentException>();
         }
 
         [Fact]
         public void EmailShouldBeTheSameAsConstructorParameter()
         {
+            //Init
+            var firstName = Option.None<PersonFirstName>();
+            var name = Option.None<PersonName>();
             var email = PersonEmail.Create("email@email.fr").Value;
 
-            var person = GetPerson(email: email.Value);
+            //Act
+            var person = GetPerson(firstName, name, email);
 
-            Check.That<string>(person.Email.Value).IsEqualTo("email@email.fr");
+            //Assert
+            var expectedEmail = PersonEmail.Create("email@email.fr").Value;
+            Check.That(person.Email.ValueOrFailure()).IsEqualTo(expectedEmail.ValueOrFailure());
         }
 
         [Fact]
         public void EmailCanBeEmpty()
         {
-            var email = Maybe<PersonEmail>.None;
-            var person = new Person(
-                surrogateId: Maybe<string>.None,
-                 firstName: PersonFirstName.Create("firstname").Value,
-                 name: PersonName.Create("name").Value,
-                 email: email);
-            Check.That(person.Email.HasNoValue).IsTrue();
+            //Init
+            var firstName = Option.Some(PersonFirstName.Create("firstname").Value);
+            var name = Option.Some(PersonName.Create("name").Value);
+            var email = Option.None<PersonEmail>();
+
+            //Act
+            var person = GetPerson(firstName, name, email);
+
+            //Assert
+            Check.That(person.Email.HasValue).IsFalse();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace HexagonalRealEstate
         static void Main(string[] args)
         {
             InitializeDatabase();
-
+            
             WelcomeView.SelectUserType();
 
             Console.Read();

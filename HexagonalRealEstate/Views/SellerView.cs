@@ -1,9 +1,9 @@
-﻿using System;
+﻿using HexagonalRealEstate.Controllers;
+using HexagonalRealEstate.Views.Helpers;
+using HexagonalRealEstate.ViewsModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using HexagonalRealEstate.Infrastructure.View.Controllers;
-using HexagonalRealEstate.Infrastructure.View.Helpers;
-using HexagonalRealEstate.Infrastructure.View.Models;
 using Unity;
 
 namespace HexagonalRealEstate.Views

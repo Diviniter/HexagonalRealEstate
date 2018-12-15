@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Repositories;
 using HexagonalRealEstate.Infrastructure.Converters;
 using HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Entities;
 using HexagonalRealEstate.Infrastructure.Dependencies.Entities;
+using Optional.Unsafe;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories
 {
@@ -23,7 +24,7 @@ namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Reposi
 
         public void CreateProspect(PersonId person, AccomodationId accomodation)
         {
-            var personEntity = Database.Persons.Single(p => p.Id == person.SurrogateId);
+            var personEntity = Database.Persons.Single(p => p.Id == person.SurrogateId.ValueOrFailure());
             var accomodationEntity = Database.Accomodations.Single(p => p.Number == accomodation.Number);
             var prospect = new ProspectEntity
             {
@@ -36,7 +37,7 @@ namespace HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Reposi
 
         public void SellAccomodation(PersonId person, AccomodationId accomodation)
         {
-            var personEntity = Database.Persons.Single(p => p.Id == person.SurrogateId);
+            var personEntity = Database.Persons.Single(p => p.Id == person.SurrogateId.ValueOrFailure());
             var accomodationEntity = Database.Accomodations.Single(p => p.Number == accomodation.Number);
             var client = new ClientEntity
             {

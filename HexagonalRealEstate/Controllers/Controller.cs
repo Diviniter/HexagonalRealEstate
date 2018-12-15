@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using HexagonalRealEstate.Infrastructure.View.Models;
+﻿using HexagonalRealEstate.ViewsModels;
+using System.Collections.Generic;
 
-namespace HexagonalRealEstate.Infrastructure.View.Controllers
+namespace HexagonalRealEstate.Controllers
 {
     public interface Controller
     {

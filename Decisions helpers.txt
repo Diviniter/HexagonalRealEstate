@@ -1,0 +1,2 @@
+Don't use id in domain :
+https://enterprisecraftsmanship.com/2014/12/27/dont-use-ids-domain-entities/

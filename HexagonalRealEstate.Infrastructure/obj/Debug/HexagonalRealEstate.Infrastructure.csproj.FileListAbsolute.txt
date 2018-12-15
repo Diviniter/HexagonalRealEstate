@@ -55,3 +55,22 @@ C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\Hexago
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.dll
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.pdb
 C:\Users\damien\Documents\Visual Studio 2012\Projects\HexagonalRealEstate\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\MediatR.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\CSharpFunctionalExtensions.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Domain.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\MediatR.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.Domain.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csprojAssemblyReference.cache
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\obj\Debug\HexagonalRealEstate.Infrastructure.csproj.CopyComplete
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.ViewsModels.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\Optional.dll
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\HexagonalRealEstate.ViewsModels.pdb
+C:\Users\resur\Source\Repos\HexagonalRealEstate\HexagonalRealEstate.Infrastructure\bin\Debug\Optional.xml

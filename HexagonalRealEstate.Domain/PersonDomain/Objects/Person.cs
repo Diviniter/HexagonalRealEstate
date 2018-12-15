@@ -1,11 +1,11 @@
-﻿using CSharpFunctionalExtensions;
-using HexagonalRealEstate.Domain.PersonDomain.Objects.Properties;
+﻿using HexagonalRealEstate.Domain.PersonDomain.Objects.Properties;
+using Optional;
 
 namespace HexagonalRealEstate.Domain.PersonDomain.Objects
 {
     public class Person : PersonId
     {
-        public Person(Maybe<string> surrogateId, PersonFirstName firstName, PersonName name, Maybe<PersonEmail> email) : base(surrogateId)
+        public Person(Option<string> surrogateId, PersonFirstName firstName, PersonName name, Option<PersonEmail> email) : base(surrogateId)
         {
             this.FirstName = firstName;
             this.Name = name;
@@ -14,6 +14,6 @@ namespace HexagonalRealEstate.Domain.PersonDomain.Objects
 
         public PersonName Name { get; private set; }
         public PersonFirstName FirstName { get; private set; }
-        public Maybe<PersonEmail> Email { get; private set; }
+        public Option<PersonEmail> Email { get; private set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Exceptions;
 using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.AccomodationDomain.Objects.Properties;
 using HexagonalRealEstate.Domain.AccomodationDomain.Service;
@@ -9,11 +7,16 @@ using HexagonalRealEstate.Domain.PersonDomain.Exceptions;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Services;
 using HexagonalRealEstate.Domain.ProspectDomain.Services;
+using HexagonalRealEstate.Helpers;
 using HexagonalRealEstate.Infrastructure.Dependencies.DataAccessLayer.Repositories;
-using HexagonalRealEstate.Infrastructure.View.Helpers;
-using HexagonalRealEstate.Infrastructure.View.Models;
+using HexagonalRealEstate.ModelsExtensions;
+using HexagonalRealEstate.Views.Helpers;
+using HexagonalRealEstate.ViewsModels;
+using Optional;
+using System;
+using System.Collections.Generic;
 
-namespace HexagonalRealEstate.Infrastructure.View.Controllers
+namespace HexagonalRealEstate.Controllers
 {
     public class ControllerImpl : Controller
     {
@@ -47,7 +50,7 @@ namespace HexagonalRealEstate.Infrastructure.View.Controllers
                 if (validationResult.IsFailure)
                     return validationResult.Error;
 
-                var personId = new PersonId(model.PersonId);
+                var personId = new PersonId(Option.Some(model.PersonId));
 
                 var accomodationNumber = AccomodationNumber.Create(model.AccomodationNumber);
                 var accomodationId = new AccomodationId(accomodationNumber.Value);
@@ -80,7 +83,9 @@ namespace HexagonalRealEstate.Infrastructure.View.Controllers
             {
                 var validationResult = accomodationModel.Evaluate();
                 if (validationResult.IsFailure)
+                {
                     return validationResult.Error;
+                }
 
                 var accomodation = accomodationModel.ToBusinessObject();
 
@@ -119,17 +124,21 @@ namespace HexagonalRealEstate.Infrastructure.View.Controllers
             {
                 var validationResult = personModel.Evaluate();
                 if (validationResult.IsFailure)
+                {
                     return validationResult.Error;
+                }
 
                 var person = personModel.ToBusinessObject();
 
                 if (this.personQuery.WithSameName(person.FirstName, person.Name))
                 {
                     var createNewPerson =
-                        Helpers.View.YesNoChoice(
+                        View.YesNoChoice(
                             "A person with same firstname an name exist, are you sure you want to create a new one ?");
                     if (!createNewPerson)
+                    {
                         return "Person has not been created";
+                    }
                 }
 
                 this.personService.CreatePerson(person);
@@ -153,9 +162,11 @@ namespace HexagonalRealEstate.Infrastructure.View.Controllers
             {
                 var validationResult = model.Evaluate();
                 if (validationResult.IsFailure)
+                {
                     return validationResult.Error;
+                }
 
-                var personId = new PersonId(model.PersonId);
+                var personId = new PersonId(Option.Some(model.PersonId));
 
                 var accomodationNumber = AccomodationNumber.Create(model.AccomodationNumber);
                 var accomodationId = new AccomodationId(accomodationNumber.Value);

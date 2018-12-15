@@ -1,51 +1,54 @@
-﻿using System;
-using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
+﻿using HexagonalRealEstate.Domain.AccomodationDomain.Objects;
 using HexagonalRealEstate.Domain.ClientDomain.Objects;
 using HexagonalRealEstate.Domain.PersonDomain.Objects;
 using HexagonalRealEstate.Tests.Domain.AccomodationDomain;
 using HexagonalRealEstate.Tests.Domain.PersonDomain;
 using NFluent;
+using System;
 using Xunit;
 
 namespace HexagonalRealEstate.Tests.Domain.ClientDomain
 {
     public class ClientTest
     {
-        private static Client GetClient()
+        private readonly Client client;
+
+        public ClientTest()
         {
-            return new Client(PersonTest.GetPerson(), AccomodationTest.GetAccomodation());
+            var person = PersonTest.GetPersonWithoutId();
+            this.client = new Client(person, AccomodationTest.GetAccomodation());
         }
 
         [Fact]
         public void PersonPropertyShouldBeTheSameAsConstructorParameter()
         {
-            var client = GetClient();
-
-            Check.That(client.Person).IsEqualTo(PersonTest.GetPerson());
+            Check.That(this.client.Person).IsEqualTo(PersonTest.GetPersonWithoutId());
         }
 
         [Fact]
         public void AccomodationPropertyShouldBeTheSameAsConstructorParameter()
         {
-            var client = GetClient();
-
-            Check.That(client.Accomodation).IsEqualTo(AccomodationTest.GetAccomodation());
+            Check.That(this.client.Accomodation).IsEqualTo(AccomodationTest.GetAccomodation());
         }
 
         [Fact]
         public void ClientShouldNotAcceptNullAccomodation()
         {
             Accomodation accomodation = null;
-            Check.ThatCode(() => { new Client(PersonTest.GetPerson(), accomodation); })
-                .Throws<ArgumentNullException>();
+
+            Action action = () => new Client(PersonTest.GetPersonWithoutId(), accomodation);
+
+            Check.ThatCode(action).Throws<ArgumentNullException>();
         }
 
         [Fact]
         public void ClientShouldNotAcceptNullPerson()
         {
             Person person = null;
-            Check.ThatCode(() => { new Client(person, AccomodationTest.GetAccomodation()); })
-                .Throws<ArgumentNullException>();
+
+            Action action = () => new Client(person, AccomodationTest.GetAccomodation());
+
+            Check.ThatCode(action).Throws<ArgumentNullException>();
         }
     }
 }

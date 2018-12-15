@@ -6,18 +6,18 @@ namespace HexagonalRealEstate.Domain.AccomodationDomain.Service
 {
     public class AccomodationServiceImpl : AccomodationService
     {
-        public readonly AccomodationQuery AccomodationQuery;
+        private readonly AccomodationQuery accomodationQuery;
         private readonly AccomodationRepository accomodationRepository;
 
         public AccomodationServiceImpl(AccomodationRepository accomodationRepository, AccomodationQuery accomodationQuery)
         {
             this.accomodationRepository = accomodationRepository;
-            this.AccomodationQuery = accomodationQuery;
+            this.accomodationQuery = accomodationQuery;
         }
 
         public void CreateAccomodation(Accomodation accomodation)
         {
-            var exist = this.AccomodationQuery.Exist(accomodation);
+            var exist = this.accomodationQuery.Exist(accomodation);
             if (exist)
                 throw new AccomodationAlreadyExistException();
 

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HexagonalRealEstate.Tests</RootNamespace>
     <AssemblyName>HexagonalRealEstate.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -20,6 +20,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,9 @@
     <Reference Include="NSubstitute, Version=3.1.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
       <HintPath>..\packages\NSubstitute.3.1.0\lib\net46\NSubstitute.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Optional, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Optional.4.0.0\lib\net45\Optional.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -121,6 +125,14 @@
     <ProjectReference Include="..\HexagonalRealEstate.Infrastructure\HexagonalRealEstate.Infrastructure.csproj">
       <Project>{212EF14D-CE0A-4BD6-8CEE-4B0A75E9531E}</Project>
       <Name>HexagonalRealEstate.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexagonalRealEstate.ViewsModels\HexagonalRealEstate.ViewsModels.csproj">
+      <Project>{15729027-e7b0-4e4b-b73a-257c90892c46}</Project>
+      <Name>HexagonalRealEstate.ViewsModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexagonalRealEstate\HexagonalRealEstate.csproj">
+      <Project>{FDA1DF40-D4BF-4DF9-A3FF-DF63CAD76565}</Project>
+      <Name>HexagonalRealEstate</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
